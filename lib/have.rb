@@ -1,5 +1,12 @@
 require "have/version"
 
 module Have
-  # Your code goes here...
+  def has? arg
+    result = self.send(arg)
+    result && result != ''
+  end
+end
+
+class Object
+  include Have
 end
