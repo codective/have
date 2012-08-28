@@ -9,14 +9,17 @@ module Have
       include? arg
     end
   end
+  alias :have? :has?
 
   def has_any? *args
     args.any? { |arg| has? arg }
   end
+  alias :have_any? :has_any?
 
   def has_all? *args
     args.all? { |arg| has? arg }
   end
+  alias :have_all? :has_all?
 end
 
 class Object

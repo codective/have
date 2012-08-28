@@ -14,6 +14,12 @@ describe Have do
       tv.hdmi = false
       tv.has?(:hdmi).should be_false
     end
+
+    it 'have? is an alias' do
+      tv.have?(:hdmi).should be_false
+      tv.hdmi = 1
+      tv.have?(:hdmi).should be_true
+    end
   end
 
   describe '#has_any?' do
